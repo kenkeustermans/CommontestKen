@@ -1,3 +1,10 @@
+/*!
+ * CommonTests ACPaaS API (May 26th 2019)
+ * 
+ * https://github.com/kenkeustermans/CommontestKen
+ *
+ * @author  Ken Keustermans
+ */
 function commonTest(responsecode, time, contenttype) {
     if(responsecode===200 || responsecode===201 || responsecode===202 || responsecode===204 || responsecode===303){
         it('should be a successful response', () => {
