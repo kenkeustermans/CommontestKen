@@ -5,7 +5,7 @@
  *
  * @author  Ken Keustermans
  */
-function commonTest(responsecode, time, contenttype) {
+(function commonTest(responsecode, time, contenttype) {
     if(responsecode===200 || responsecode===201 || responsecode===202 || responsecode===204 || responsecode===303){
         it('should be a successful response', () => {
         	response.ok.should.be.true;
@@ -101,9 +101,9 @@ function commonTest(responsecode, time, contenttype) {
             });
         }
     }
-}
-function testken(time) {        
+})
+(function testken(time) {        
     it('dit is een test van de tweedefunctie', () => {
         response.time.should.be.below(time);
     });
-}
+})
