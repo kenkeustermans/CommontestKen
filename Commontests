@@ -102,3 +102,8 @@ function commonTest(responsecode, time, contenttype) {
         }
     }
 }
+function testken(time) {        
+    it('dit is een test van de tweedefunctie', () => {
+        response.time.should.be.below(time);
+    });
+}
