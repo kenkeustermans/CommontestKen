@@ -1,5 +1,4 @@
 function commonTest(responsecode, time, contenttype) {
-    //console.log(responsecode);
     if(responsecode===200 || responsecode===201 || responsecode===202 || responsecode===204 || responsecode===303){
         it('should be a successful response', () => {
         	response.ok.should.be.true;
