@@ -5,7 +5,7 @@
  *
  * @author  Ken Keustermans
  */
-function commonTest(responseCode, time, contentType) {
+function commonTest(responseCode, contentType, time) {
     if (responseCode >= 200 && responseCode <= 399) {
         it('should be a successful response', () => {
             response.should.have.status(responseCode);
