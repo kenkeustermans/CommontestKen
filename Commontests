@@ -15,10 +15,11 @@ function commonTest(responseCode, contentType, time) {
             response.should.have.status(responseCode);
         });
     }
-
-    it('should respond in a timely manner', () => {
-        response.time.should.be.below(time);
-    });
+    if (time){
+        it('should respond in a timely manner', () => {
+            response.time.should.be.below(time);
+        });
+    }
 
     it('should return ' + contentType, () => {
         response.should.have.header('Content-Type', contentType);
