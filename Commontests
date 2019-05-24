@@ -5,7 +5,7 @@
  *
  * @author  Ken Keustermans
  */
-function DigipolisAPIStandard {
+function DigipolisAPIStandard() {
 	function commonTest(responsecode, time, contenttype) {
 		if(responsecode===200 || responsecode===201 || responsecode===202 || responsecode===204 || responsecode===303){
 			it('should be a successful response', () => {
