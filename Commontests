@@ -5,105 +5,100 @@
  *
  * @author  Ken Keustermans
  */
-function DigipolisAPIStandard() {
-	function commonTest(responsecode, time, contenttype) {
-		if(responsecode===200 || responsecode===201 || responsecode===202 || responsecode===204 || responsecode===303){
-			it('should be a successful response', () => {
-				response.ok.should.be.true;
-				response.should.have.status(responsecode);
-				response.error.should.be.false;
-			});
-		}else if (responsecode===400 || responsecode===401 || responsecode===403 || responsecode===404 || responsecode===405 || responsecode===415 || responsecode===429 || responsecode===500){
-			it('should be a unsuccessful response', () => {
-				response.ok.should.be.false;
-				response.should.have.status(responsecode);
-				response.error.should.be.true;
-			});
-		}
-			
-		it('should respond in a timely manner', () => {
-			response.time.should.be.below(time);
-		});
-		
-		
-	}
-	function testken(responsecode, time, contenttype) {
-		switch (contenttype.toLowerCase()){
-			case "application/json": {
-				it('should return ' + contenttype, () => {
-					response.should.be.json;
-					response.should.have.header('Content-Type', contenttype);
-					response.type.should.equal('application/json');
-				});
-				break;
-			}case "application/json; charset=utf-8": {
-				it('should return ' + contenttype, () => {
-					response.should.be.json;
-					response.should.have.header('Content-Type', contenttype);
-					response.type.should.equal('application/json');
-					response.charset.should.equal('utf-8')
-				});
-				break;
-			}case "application/hal+json":{
-			   it('should return ' + contenttype, () => {
-					response.should.be.json;
-					response.should.have.header('Content-Type', contenttype);
-					response.type.should.equal('application/hal+json');
-				});
-				break;
-			}case "application/hal+json; charset=utf-8":{
-				it('should return ' + contenttype, () => {
-					response.should.be.json;
-					response.should.have.header('Content-Type', contenttype);
-					response.type.should.equal('application/hal+json');
-					response.charset.should.equal('utf-8')
-				});
-				break;
-			}case "text/html":{
-				it('should return ' + contenttype, () => {
-					response.should.be.html;
-					response.should.have.header('Content-Type', contenttype);
-					response.type.should.equal('text/html');
-				});
-				break;
-			}case "text/html; charset=utf-8":{
-				it('should return ' + contenttype, () => {
-					response.should.be.html;
-					response.should.have.header('Content-Type', contenttype);
-					response.type.should.equal('text/html');
-					response.charset.should.equal('utf-8')
-				});
-				break;
-			}case "application/xml":{
-				it('should return ' + contenttype, () => {
-					response.should.be.xml;
-					response.should.have.header('Content-Type', contenttype);
-					response.type.should.equal('application/xml');
-				});
-				break;
-			}case "application/xml; charset=utf-8":{
-				it('should return ' + contenttype, () => {
-					response.should.be.xml;
-					response.should.have.header('Content-Type', contenttype);
-					response.type.should.equal('application/xml');
-					response.charset.should.equal('utf-8')
-				});
-				break;
-			}case "text/plain":{
-				it('should return ' + contenttype, () => {
-					response.should.be.text;
-					response.should.have.header('Content-Type', contenttype);
-					response.type.should.equal('text/plain');
-				});
-				break;
-			}case "text/plain; charset=utf-8":{
-				it('should return ' + contenttype, () => {
-					response.should.be.text;
-					response.should.have.header('Content-Type', contenttype);
-					response.type.should.equal('text/plain');
-					response.charset.should.equal('utf-8')
-				});
-			}
-		}
-	}
+function commonTest(responsecode, time, contenttype) {
+    if(responsecode===200 || responsecode===201 || responsecode===202 || responsecode===204 || responsecode===303){
+        it('should be a successful response', () => {
+        	response.ok.should.be.true;
+        	response.should.have.status(responsecode);
+        	response.error.should.be.false;
+        });
+    }else if (responsecode===400 || responsecode===401 || responsecode===403 || responsecode===404 || responsecode===405 || responsecode===415 || responsecode===429 || responsecode===500){
+        it('should be a unsuccessful response', () => {
+        	response.ok.should.be.false;
+        	response.should.have.status(responsecode);
+        	response.error.should.be.true;
+        });
+    }
+        
+    it('should respond in a timely manner', () => {
+        response.time.should.be.below(time);
+    });
+    
+    switch (contenttype.toLowerCase()){
+        case "application/json": {
+            it('should return ' + contenttype, () => {
+            	response.should.be.json;
+            	response.should.have.header('Content-Type', contenttype);
+            	response.type.should.equal('application/json');
+            });
+            break;
+        }case "application/json; charset=utf-8": {
+            it('should return ' + contenttype, () => {
+            	response.should.be.json;
+            	response.should.have.header('Content-Type', contenttype);
+            	response.type.should.equal('application/json');
+                response.charset.should.equal('utf-8')
+            });
+            break;
+        }case "application/hal+json":{
+           it('should return ' + contenttype, () => {
+            	response.should.be.json;
+            	response.should.have.header('Content-Type', contenttype);
+            	response.type.should.equal('application/hal+json');
+            });
+            break;
+        }case "application/hal+json; charset=utf-8":{
+            it('should return ' + contenttype, () => {
+            	response.should.be.json;
+            	response.should.have.header('Content-Type', contenttype);
+            	response.type.should.equal('application/hal+json');
+                response.charset.should.equal('utf-8')
+            });
+            break;
+        }case "text/html":{
+            it('should return ' + contenttype, () => {
+            	response.should.be.html;
+            	response.should.have.header('Content-Type', contenttype);
+            	response.type.should.equal('text/html');
+            });
+            break;
+        }case "text/html; charset=utf-8":{
+            it('should return ' + contenttype, () => {
+            	response.should.be.html;
+            	response.should.have.header('Content-Type', contenttype);
+            	response.type.should.equal('text/html');
+                response.charset.should.equal('utf-8')
+            });
+            break;
+        }case "application/xml":{
+            it('should return ' + contenttype, () => {
+            	response.should.be.xml;
+            	response.should.have.header('Content-Type', contenttype);
+            	response.type.should.equal('application/xml');
+            });
+            break;
+        }case "application/xml; charset=utf-8":{
+            it('should return ' + contenttype, () => {
+            	response.should.be.xml;
+            	response.should.have.header('Content-Type', contenttype);
+        	    response.type.should.equal('application/xml');
+                response.charset.should.equal('utf-8')
+            });
+            break;
+        }case "text/plain":{
+            it('should return ' + contenttype, () => {
+            	response.should.be.text;
+            	response.should.have.header('Content-Type', contenttype);
+            	response.type.should.equal('text/plain');
+            });
+            break;
+        }case "text/plain; charset=utf-8":{
+            it('should return ' + contenttype, () => {
+            	response.should.be.text;
+            	response.should.have.header('Content-Type', contenttype);
+            	response.type.should.equal('text/plain');
+                response.charset.should.equal('utf-8')
+            });
+        }
+    }
 }
