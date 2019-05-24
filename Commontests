@@ -28,3 +28,6 @@ function commonTest(responseCode, contentType, time) {
         });
     }
 }
+function logging() {
+    console.log('ok');
+}
