@@ -28,6 +28,10 @@ function commonTest(responseCode, contentType, time) {
         });
     }
 }
-function logging() {
-    console.log('ok');
+function logging(testtime) {
+    if (testtime){
+        it('should respond in a timely manner', () => {
+            response.time.should.be.below(testtime);
+        });
+    }
 }
