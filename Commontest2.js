@@ -31,7 +31,7 @@ function testCommon(statusCode, contentType, jsonSchema, location) {
 	  	jsonSchema && checkJSONSchema(jsonSchema);
 	  	location && checkLocation(location);
   	}else{
-    		console.log(`Status code is Foutief!!!!!`);
+    		console.log(`Status code is Foutief!!!!`);
   	}
 }
 
