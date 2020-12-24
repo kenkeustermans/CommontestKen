@@ -26,7 +26,7 @@ function testCommon(statusCode, contentType, jsonSchema, location) {
 	logResponseBody();
 	if (statusCode && checkStatusCode(statusCode) === true) {
     		//statusCode && checkStatusCode(statusCode);
-    		console.log(`Status code is correct`);
+    		console.log(`Status code is correct!`);
 	  	contentType && checkContentType(contentType);
 	  	jsonSchema && checkJSONSchema(jsonSchema);
 	  	location && checkLocation(location);
