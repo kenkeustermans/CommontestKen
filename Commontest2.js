@@ -24,15 +24,15 @@ const COMMON = {
  */
 function testCommon(statusCode, contentType, jsonSchema, location) {
 	logResponseBody();
-	if (statusCode && checkStatusCode(statusCode)) {
-    //statusCode && checkStatusCode(statusCode);
-    console.log(`Status code is correct`);
-	  contentType && checkContentType(contentType);
-	  jsonSchema && checkJSONSchema(jsonSchema);
-	  location && checkLocation(location);
-  }else{
-    console.log(`Status code is Foutief!!!!!`);
-  }
+	if (statusCode && checkStatusCode(statusCode) === true) {
+    		//statusCode && checkStatusCode(statusCode);
+    		console.log(`Status code is correct`);
+	  	contentType && checkContentType(contentType);
+	  	jsonSchema && checkJSONSchema(jsonSchema);
+	  	location && checkLocation(location);
+  	}else{
+    		console.log(`Status code is Foutief!!!!!`);
+  	}
 }
 
 /**
