@@ -24,7 +24,7 @@ const COMMON = {
  */
 function testCommon(statusCode, contentType, jsonSchema, location) {
 	logResponseBody();
-	if (statusCode && checkStatusCode(statusCode) == true) {
+	if (statusCode && checkStatusCode(statusCode) === pm.response.to.have.status(statusCode)) {
     		//statusCode && checkStatusCode(statusCode);
     		console.log(`Status code is correct!`);
 	  	contentType && checkContentType(contentType);
